@@ -65,12 +65,12 @@ export const ElementSubjectToLearn = (): JSX.Element => {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-white flex items-center justify-center p-4">
+    <div className="min-h-screen w-full bg-white flex justify-center pt-4">
       <div
-        className="inline-flex flex-col h-[1418px] w-[1920px] items-end relative bg-white origin-center"
+        className="inline-flex flex-col h-[1418px] w-[1920px] items-end relative bg-white"
         style={{
           transform: `scale(${scale})`,
-          transformOrigin: 'center center'
+          transformOrigin: 'top center'
         }}
         data-model-id="5584:558165"
       >
@@ -82,7 +82,14 @@ export const ElementSubjectToLearn = (): JSX.Element => {
       </header>
 
       {/* Navigation bar */}
-      <nav className="flex items-center justify-between px-[88px] py-6 relative self-stretch w-full flex-[0_0_auto] bg-white translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]" style={{ boxShadow: 'var(--shadow-medium)' }}>
+      <nav className="flex items-center justify-between px-[88px] py-6 relative self-stretch w-full flex-[0_0_auto] bg-white translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+        {/* Shadow element positioned absolutely below nav */}
+        <div 
+          className="absolute left-0 right-0 top-full h-2 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent)'
+          }}
+        />
         <div className="inline-flex items-center gap-8 relative flex-[0_0_auto]">
           {navigationItems.map((item, index) => (
             <Button
@@ -130,7 +137,10 @@ export const ElementSubjectToLearn = (): JSX.Element => {
             <Button
               variant="outline"
               className="inline-flex h-12 items-center justify-center gap-2 px-6 py-3 relative flex-[0_0_auto] bg-white rounded-lg hover:bg-gray-50"
-              style={{ border: '1px solid #016937 !important' }}
+              style={{ 
+                border: '1px solid #016937',
+                boxShadow: 'none'
+              }}
             >
               <img
                 className="relative w-4 h-4"
@@ -153,76 +163,27 @@ export const ElementSubjectToLearn = (): JSX.Element => {
                   key={index}
                   className="flex flex-col w-[484px] h-[217px] items-end gap-4 p-8 relative bg-x rounded-2xl overflow-hidden transition-shadow duration-300"
                   style={{ 
-                    border: 'none !important', 
-                    boxShadow: 'none !important',
-                    outline: 'none !important'
+                    border: 'none',
+                    boxShadow: '0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)'
                   }}
                 >
-                  <CardContent 
-                    className="p-0 w-full" 
-                    style={{ 
-                      border: 'none !important',
-                      outline: 'none !important',
-                      boxShadow: 'none !important'
-                    }}
-                  >
-                    <div 
-                      className="flex items-start gap-[41px] self-stretch w-full relative flex-[0_0_auto]" 
-                      style={{ 
-                        border: 'none !important',
-                        outline: 'none !important',
-                        boxShadow: 'none !important'
-                      }}
-                    >
-                      <div
-                        style={{
-                          border: 'none !important',
-                          outline: 'none !important',
-                          boxShadow: 'none !important'
-                        }}
-                      >
-                        <img
-                          className="relative w-[74px] h-[74px] mt-[-2.00px] mb-[-2.33px] ml-[-3.00px]"
-                          alt="Card icons"
-                          src={card.icon}
-                          style={{ 
-                            border: 'none !important', 
-                            outline: 'none !important',
-                            boxShadow: 'none !important'
-                          }}
-                        />
-                      </div>
+                  <CardContent className="p-0 w-full">
+                    <div className="flex items-start gap-[41px] self-stretch w-full relative flex-[0_0_auto]" style={{ border: 'none', outline: 'none' }}>
+                      <img
+                        className="relative w-[74px] h-[74px] mt-[-2.00px] mb-[-2.33px] ml-[-3.00px]"
+                        alt="Card icons"
+                        src={card.icon}
+                      />
 
-                      <h3 
-                        className="relative flex-1 h-[69.67px] mt-[-1.00px] [text-shadow:0px_1px_3px_#00000014] font-DSM-button-bold font-[number:var(--DSM-button-bold-font-weight)] text-black text-[length:var(--DSM-button-bold-font-size)] tracking-[var(--DSM-button-bold-letter-spacing)] leading-[var(--DSM-button-bold-line-height)] [direction:rtl] [font-style:var(--DSM-button-bold-font-style)] shadow-shadow-small" 
-                        style={{ 
-                          border: 'none !important',
-                          outline: 'none !important',
-                          boxShadow: 'none !important'
-                        }}
-                      >
+                      <h3 className="relative flex-1 h-[69.67px] mt-[-1.00px] font-DSM-button-bold font-[number:var(--DSM-button-bold-font-weight)] text-black text-[length:var(--DSM-button-bold-font-size)] tracking-[var(--DSM-button-bold-letter-spacing)] leading-[var(--DSM-button-bold-line-height)] [direction:rtl] [font-style:var(--DSM-button-bold-font-style)]" style={{ border: 'none', outline: 'none', boxShadow: 'none', textShadow: 'none' }}>
                         {card.title}
                       </h3>
                     </div>
 
-                    <div 
-                      className="flex flex-col w-[414px] items-end gap-6 relative flex-[0_0_auto]"
-                      style={{ 
-                        border: 'none !important',
-                        outline: 'none !important',
-                        boxShadow: 'none !important'
-                      }}
-                    >
-                      <p 
-                        className="self-stretch [text-shadow:0px_1px_3px_#00000014] font-DSM-button-regular font-[number:var(--DSM-button-regular-font-weight)] text-black leading-[var(--DSM-button-regular-line-height)] [direction:rtl] relative mt-[-1.00px] text-[length:var(--DSM-button-regular-font-size)] tracking-[var(--DSM-button-regular-letter-spacing)] [font-style:var(--DSM-button-regular-font-style)] shadow-shadow-small" 
-                        style={{ 
-                          border: 'none !important',
-                          outline: 'none !important',
-                          boxShadow: 'none !important'
-                        }}
-                      >
-                        {card.content}
-                      </p>
+                    <div className="flex flex-col w-[414px] items-end gap-6 relative flex-[0_0_auto]" style={{ border: 'none', outline: 'none' }}>
+                      <p className="self-stretch font-DSM-button-regular font-[number:var(--DSM-button-regular-font-weight)] text-black leading-[var(--DSM-button-regular-line-height)] [direction:rtl] relative mt-[-1.00px] text-[length:var(--DSM-button-regular-font-size)] tracking-[var(--DSM-button-regular-letter-spacing)] [font-style:var(--DSM-button-regular-font-style)]" style={{ border: 'none', outline: 'none', boxShadow: 'none', textShadow: 'none' }}>
+                          {card.content}
+                        </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -247,8 +208,11 @@ export const ElementSubjectToLearn = (): JSX.Element => {
                       >
                         <Button
                           variant="ghost"
-                          className="inline-flex min-w-[300px] items-center justify-center gap-6 px-8 py-4 relative flex-[0_0_auto] bg-white rounded-3xl hover:shadow-xl transition-shadow duration-300 h-auto"
-                          style={{ boxShadow: 'var(--shadow-large)', border: 'none' }}
+                          className="inline-flex min-w-[300px] items-center justify-center gap-6 px-8 py-4 relative flex-[0_0_auto] bg-white rounded-3xl transition-shadow duration-300 h-auto"
+                          style={{
+                            border: 'none',
+                            boxShadow: '0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                          }}
                         >
                           <span className="relative flex-1 font-DSM-button-regular font-[number:var(--DSM-button-regular-font-weight)] text-[#00280f] text-[length:var(--DSM-button-regular-font-size)] leading-[var(--DSM-button-regular-line-height)] text-center tracking-[var(--DSM-button-regular-letter-spacing)] [font-style:var(--DSM-button-regular-font-style)] [direction:rtl]">
                             {option.label}
@@ -275,7 +239,13 @@ export const ElementSubjectToLearn = (): JSX.Element => {
                   </div>
                 </div>
 
-                <Button className="flex w-[120px] justify-center px-6 py-4 z-0 bg-[#016937] items-center gap-2.5 relative flex-[0_0_auto] hover:bg-[#014a29] transition-colors duration-300 h-auto translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:1200ms]">
+                <Button 
+                  className="flex w-[120px] justify-center px-6 py-4 z-0 bg-[#016937] items-center gap-2.5 relative flex-[0_0_auto] hover:bg-[#014a29] transition-colors duration-300 h-auto translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:1200ms]"
+                  style={{
+                    border: 'none',
+                    boxShadow: 'none'
+                  }}
+                >
                   <span className="relative w-fit mt-[-1.00px] font-DSM-button font-[number:var(--DSM-button-font-weight)] text-white text-[length:var(--DSM-button-font-size)] tracking-[var(--DSM-button-letter-spacing)] leading-[var(--DSM-button-line-height)] whitespace-nowrap [direction:rtl] [font-style:var(--DSM-button-font-style)]">
                     שנכיר
                   </span>

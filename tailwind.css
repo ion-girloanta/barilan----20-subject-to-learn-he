@@ -229,33 +229,6 @@
 }
 
 @layer base {
-  * {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
-  /* Specifically target card elements */
-  .card *, 
-  [data-model-id] *,
-  div[class*="card"] *,
-  div[class*="Card"] *,
-  img,
-  svg,
-  picture {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
-  /* Force remove all visual borders */
-  *::before,
-  *::after {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
