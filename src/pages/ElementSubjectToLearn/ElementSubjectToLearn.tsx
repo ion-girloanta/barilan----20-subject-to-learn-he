@@ -82,7 +82,7 @@ export const ElementSubjectToLearn = (): JSX.Element => {
       </header>
 
       {/* Navigation bar */}
-      <nav className="flex items-center justify-between px-[88px] py-6 relative self-stretch w-full flex-[0_0_auto] bg-white shadow-shadow-medium translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
+      <nav className="flex items-center justify-between px-[88px] py-6 relative self-stretch w-full flex-[0_0_auto] bg-white translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]" style={{ boxShadow: 'var(--shadow-medium)' }}>
         <div className="inline-flex items-center gap-8 relative flex-[0_0_auto]">
           {navigationItems.map((item, index) => (
             <Button
@@ -129,7 +129,8 @@ export const ElementSubjectToLearn = (): JSX.Element => {
           <div className="inline-flex items-center justify-center relative flex-[0_0_auto] translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]">
             <Button
               variant="outline"
-              className="inline-flex h-12 items-center justify-center gap-2 px-6 py-3 relative flex-[0_0_auto] bg-white rounded-lg border border-solid border-[#016937] hover:bg-gray-50"
+              className="inline-flex h-12 items-center justify-center gap-2 px-6 py-3 relative flex-[0_0_auto] bg-white rounded-lg hover:bg-gray-50"
+              style={{ border: '1px solid #016937 !important' }}
             >
               <img
                 className="relative w-4 h-4"
@@ -150,25 +151,78 @@ export const ElementSubjectToLearn = (): JSX.Element => {
               {infoCards.map((card, index) => (
                 <Card
                   key={index}
-                  className="flex flex-col w-[484px] h-[217px] items-end gap-4 p-8 relative bg-x rounded-2xl overflow-hidden border border-solid border-[#dee2f2] shadow-shadow-large hover:shadow-xl transition-shadow duration-300"
+                  className="flex flex-col w-[484px] h-[217px] items-end gap-4 p-8 relative bg-x rounded-2xl overflow-hidden transition-shadow duration-300"
+                  style={{ 
+                    border: 'none !important', 
+                    boxShadow: 'none !important',
+                    outline: 'none !important'
+                  }}
                 >
-                  <CardContent className="p-0 w-full">
-                    <div className="flex items-start gap-[41px] self-stretch w-full relative flex-[0_0_auto]">
-                      <img
-                        className="relative w-[74px] h-[74px] mt-[-2.00px] mb-[-2.33px] ml-[-3.00px]"
-                        alt="Card icons"
-                        src={card.icon}
-                      />
+                  <CardContent 
+                    className="p-0 w-full" 
+                    style={{ 
+                      border: 'none !important',
+                      outline: 'none !important',
+                      boxShadow: 'none !important'
+                    }}
+                  >
+                    <div 
+                      className="flex items-start gap-[41px] self-stretch w-full relative flex-[0_0_auto]" 
+                      style={{ 
+                        border: 'none !important',
+                        outline: 'none !important',
+                        boxShadow: 'none !important'
+                      }}
+                    >
+                      <div
+                        style={{
+                          border: 'none !important',
+                          outline: 'none !important',
+                          boxShadow: 'none !important'
+                        }}
+                      >
+                        <img
+                          className="relative w-[74px] h-[74px] mt-[-2.00px] mb-[-2.33px] ml-[-3.00px]"
+                          alt="Card icons"
+                          src={card.icon}
+                          style={{ 
+                            border: 'none !important', 
+                            outline: 'none !important',
+                            boxShadow: 'none !important'
+                          }}
+                        />
+                      </div>
 
-                      <h3 className="relative flex-1 h-[69.67px] mt-[-1.00px] [text-shadow:0px_1px_3px_#00000014] font-DSM-button-bold font-[number:var(--DSM-button-bold-font-weight)] text-black text-[length:var(--DSM-button-bold-font-size)] tracking-[var(--DSM-button-bold-letter-spacing)] leading-[var(--DSM-button-bold-line-height)] [direction:rtl] [font-style:var(--DSM-button-bold-font-style)] shadow-shadow-small">
+                      <h3 
+                        className="relative flex-1 h-[69.67px] mt-[-1.00px] [text-shadow:0px_1px_3px_#00000014] font-DSM-button-bold font-[number:var(--DSM-button-bold-font-weight)] text-black text-[length:var(--DSM-button-bold-font-size)] tracking-[var(--DSM-button-bold-letter-spacing)] leading-[var(--DSM-button-bold-line-height)] [direction:rtl] [font-style:var(--DSM-button-bold-font-style)] shadow-shadow-small" 
+                        style={{ 
+                          border: 'none !important',
+                          outline: 'none !important',
+                          boxShadow: 'none !important'
+                        }}
+                      >
                         {card.title}
                       </h3>
                     </div>
 
-                    <div className="flex flex-col w-[414px] items-end gap-6 relative flex-[0_0_auto]">
-                      <p className="self-stretch [text-shadow:0px_1px_3px_#00000014] font-DSM-button-regular font-[number:var(--DSM-button-regular-font-weight)] text-black leading-[var(--DSM-button-regular-line-height)] [direction:rtl] relative mt-[-1.00px] text-[length:var(--DSM-button-regular-font-size)] tracking-[var(--DSM-button-regular-letter-spacing)] [font-style:var(--DSM-button-regular-font-style)] shadow-shadow-small">
-                          {card.content}
-                        </p>
+                    <div 
+                      className="flex flex-col w-[414px] items-end gap-6 relative flex-[0_0_auto]"
+                      style={{ 
+                        border: 'none !important',
+                        outline: 'none !important',
+                        boxShadow: 'none !important'
+                      }}
+                    >
+                      <p 
+                        className="self-stretch [text-shadow:0px_1px_3px_#00000014] font-DSM-button-regular font-[number:var(--DSM-button-regular-font-weight)] text-black leading-[var(--DSM-button-regular-line-height)] [direction:rtl] relative mt-[-1.00px] text-[length:var(--DSM-button-regular-font-size)] tracking-[var(--DSM-button-regular-letter-spacing)] [font-style:var(--DSM-button-regular-font-style)] shadow-shadow-small" 
+                        style={{ 
+                          border: 'none !important',
+                          outline: 'none !important',
+                          boxShadow: 'none !important'
+                        }}
+                      >
+                        {card.content}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -193,7 +247,8 @@ export const ElementSubjectToLearn = (): JSX.Element => {
                       >
                         <Button
                           variant="ghost"
-                          className="inline-flex min-w-[300px] items-center justify-center gap-6 px-8 py-4 relative flex-[0_0_auto] bg-white rounded-3xl shadow-shadow-large hover:shadow-xl transition-shadow duration-300 h-auto"
+                          className="inline-flex min-w-[300px] items-center justify-center gap-6 px-8 py-4 relative flex-[0_0_auto] bg-white rounded-3xl hover:shadow-xl transition-shadow duration-300 h-auto"
+                          style={{ boxShadow: 'var(--shadow-large)', border: 'none' }}
                         >
                           <span className="relative flex-1 font-DSM-button-regular font-[number:var(--DSM-button-regular-font-weight)] text-[#00280f] text-[length:var(--DSM-button-regular-font-size)] leading-[var(--DSM-button-regular-line-height)] text-center tracking-[var(--DSM-button-regular-letter-spacing)] [font-style:var(--DSM-button-regular-font-style)] [direction:rtl]">
                             {option.label}
