@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 
 export const ElementSubjectToLearn = (): JSX.Element => {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const updateScale = () => {
+      const scaleX = (window.innerWidth - 32) / 1920;
+      const scaleY = (window.innerHeight - 32) / 1418;
+      setScale(Math.min(scaleX, scaleY)); // Always scale to fit viewport, no maximum limit
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
   const navigationItems = [
     {
       text: "יציאה",
@@ -52,10 +65,15 @@ export const ElementSubjectToLearn = (): JSX.Element => {
   ];
 
   return (
-    <div
-      className="inline-flex flex-col h-[1418px] items-end relative bg-white"
-      data-model-id="5584:558165"
-    >
+    <div className="min-h-screen w-full bg-white flex items-center justify-center p-4">
+      <div
+        className="inline-flex flex-col h-[1418px] w-[1920px] items-end relative bg-white origin-center"
+        style={{
+          transform: `scale(${scale})`,
+          transformOrigin: 'center center'
+        }}
+        data-model-id="5584:558165"
+      >
       {/* Header with logo */}
       <header className="flex flex-col w-[1920px] items-start gap-2.5 pl-0 pr-6 pt-6 pb-0 relative flex-[0_0_auto] translate-y-[-1rem] animate-fade-in opacity-0">
         <div className="flex flex-col items-end gap-2.5 self-stretch w-full relative flex-[0_0_auto]">
@@ -215,6 +233,7 @@ export const ElementSubjectToLearn = (): JSX.Element => {
 
       {/* Background decorative image */}
       <div className="absolute w-[703px] h-[1034px] top-[174px] left-1 bg-[url(https://c.animaapp.com/mf6rx1s3m2uA3m/img/rectangle-16918.png)] bg-cover bg-[50%_50%] animate-fade-in opacity-0 [--animation-delay:600ms]" />
+      </div>
     </div>
   );
 };
